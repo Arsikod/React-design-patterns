@@ -1,20 +1,15 @@
-import { useState } from 'react';
-import './App.css';
+import LargePersonListItem from './ListItem/people/LargePersonListItem';
+import { people } from './ListItem/people/mocks/data';
+import SmallPersonListItem from './ListItem/people/SmallPersonListItem';
+import RegularList from './ListItem/RegularList';
 import SplitScreen from './SplitScreen';
-
-function LeftHand() {
-  return <h1 style={{ backgroundColor: 'red' }}>Left</h1>;
-}
-
-function RightHand() {
-  return <p style={{ backgroundColor: 'blue' }}>Right</p>;
-}
 
 function App() {
   return (
     <SplitScreen leftWeight={1} rightWeight={1}>
-      <LeftHand />
-      <RightHand />
+      <RegularList items={people} component={SmallPersonListItem} />
+
+      <RegularList items={people} component={LargePersonListItem} />
     </SplitScreen>
   );
 }
