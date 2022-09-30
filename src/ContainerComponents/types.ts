@@ -27,3 +27,10 @@ export interface IUser {
   website: string;
   company: Company;
 }
+
+export interface ITodo {
+  userId: number;
+  id: number;
+  title: string;
+  completed: boolean;
+}

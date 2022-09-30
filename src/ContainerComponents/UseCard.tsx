@@ -1,10 +1,14 @@
 import { IUser } from '../ContainerComponents/types';
 
-export default function UserCard({ name, phone }: IUser) {
+interface IUserCard {
+  user?: IUser;
+}
+
+export default function UserCard(props: IUserCard) {
   return (
     <>
-      <h3>{name}</h3>
-      <p>{phone}</p>
+      <h3>{props.user?.name}</h3>
+      <p>{props.user?.phone}</p>
     </>
   );
 }
