@@ -15,6 +15,10 @@ export default function ContainerComponents() {
       <Loader getData={() => getData('/users/3')}>
         <UserCard />
       </Loader>
+
+      <Loader getData={() => getData('/todos/3')}>
+        <TodoCard />
+      </Loader>
     </>
   );
 }
