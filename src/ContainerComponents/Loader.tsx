@@ -1,3 +1,4 @@
+import { AxiosResponse } from 'axios';
 import {
   Children,
   cloneElement,
@@ -6,22 +7,22 @@ import {
   useEffect,
   useState,
 } from 'react';
-import { axiosInstance } from '../api';
 
 interface ILoader {
-  url: string;
+  getData: <T>() => Promise<AxiosResponse<T>>;
   children: ReactNode;
 }
 
-export default function Loader<TData>({ url, children }: ILoader) {
+export default function Loader<TData>({ getData, children }: ILoader) {
   const [data, setData] = useState<TData>();
 
   useEffect(() => {
     (async () => {
-      const response = await axiosInstance.get<TData>(url);
-      setData(response.data);
+      const { data } = await getData<TData>();
+
+      data && setData(data);
     })();
-  }, [url]);
+  }, [getData]);
 
   return (
     <>
