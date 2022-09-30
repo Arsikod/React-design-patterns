@@ -20,7 +20,7 @@ const ModalBody = styled.div`
 `;
 
 interface IModal {
-  children: ReactNode[];
+  children: ReactNode | Array<ReactNode>;
 }
 
 export default function Modal({ children }: IModal) {

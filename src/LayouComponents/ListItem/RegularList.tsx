@@ -1,5 +1,3 @@
-import { ReactElement, ReactNode } from 'react';
-
 interface IRegularList<T> {
   items: Array<T>;
   component: React.ElementType;
