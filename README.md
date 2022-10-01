@@ -11,3 +11,12 @@ Components that deal primarily with arranging other components on the page. Ex: 
 Components that take care of loading and managing data for their child components
 
 **idea:** Components should not know where their data is coming from.
+
+## Uncontrolled Components
+
+Keep track of their own states
+
+## Controlled Components
+
+All state is passesd in as props
+**benefits:** validate input field on typing
