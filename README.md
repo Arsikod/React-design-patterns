@@ -20,3 +20,8 @@ Keep track of their own states
 
 All state is passesd in as props
 **benefits:** validate input field on typing
+
+## Higher Order Components
+
+Sharing complex behavior between multiple components
+Adding extra functionality to existing components
