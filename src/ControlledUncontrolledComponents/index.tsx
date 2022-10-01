@@ -14,7 +14,7 @@ export default function ControlledUncontrolled() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   function handleFinish(data: Record<string, unknown>) {
-    console.log(data);
+    console.log({ data });
   }
   return (
     <>

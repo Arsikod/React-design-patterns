@@ -1,4 +1,4 @@
-import React, { ReactChild } from 'react';
+import React from 'react';
 import { Children, ReactNode, useState } from 'react';
 
 interface IUncontrolledStepper {
@@ -23,13 +23,13 @@ export default function UncontrolledStepper({
       ...stepData,
     };
 
-    console.log({ updatedData });
-
     if (nextIndex < React.Children.count(children)) {
       setCurrentIndex(currentIndex + 1);
     } else {
       onFinish(updatedData);
     }
+
+    setFormData(updatedData);
   }
 
   if (React.isValidElement(currentChild)) {
