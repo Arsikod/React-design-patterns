@@ -1,5 +1,4 @@
 import { IUser } from '../ContainerComponents/types';
-import { withEditablehUser } from '../HOCs/withEditableUser';
 
 export interface IUserInfoForm {
   user: IUser;
@@ -8,6 +7,31 @@ export interface IUserInfoForm {
   onResetUser: () => void;
 }
 
-export const UserInfoForm = withEditablehUser(
-  ({ user, onChangeUser, onSaveUser, onResetUser }: IUserInfoForm) => {}
-);
+export default function UserInfoForm(props: IUserInfoForm) {
+  const { user, onChangeUser, onSaveUser, onResetUser } = props;
+
+  return user ? (
+    <form>
+      <label>
+        Name:
+        <input
+          value={user.name}
+          onChange={(e) => onChangeUser({ ...user, name: e.target.value })}
+        />
+      </label>
+
+      <label>
+        UserName:
+        <input
+          value={user.username}
+          onChange={(e) => onChangeUser({ ...user, username: e.target.value })}
+        />
+      </label>
+
+      <button onClick={onResetUser}>reset</button>
+      <button onClick={onSaveUser}>save changes</button>
+    </form>
+  ) : (
+    <p>...loading</p>
+  );
+}
