@@ -23,5 +23,6 @@ All state is passesd in as props
 
 ## Higher Order Components
 
+HOCs are just a functions
 Sharing complex behavior between multiple components
 Adding extra functionality to existing components

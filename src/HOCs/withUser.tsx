@@ -8,7 +8,7 @@ export function withUser<T extends IUser>(
 ) {
   const ComponentWithUser = (props: Record<string, unknown>) => {
     const [user, setUser] = useState<T | null>(null);
-    console.log({ user });
+
     useEffect(() => {
       (async () => {
         const response = await axiosInstance.get<T>(`users/${userId}`);
